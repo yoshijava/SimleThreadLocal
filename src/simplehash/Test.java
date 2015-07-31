@@ -2,11 +2,10 @@ import static java.lang.Math.random;
 
 public class Test extends Thread {
 
-	private static final MyThreadLocal<Integer> value = new MyThreadLocal<Integer>();
+	private static final ThreadId id = new ThreadId();
 
 	public void run() {
-		value.set( (int) (random()*100) );
-		System.out.println(value.get());
+		System.out.println(id.get());
 	}
 
 	public static void main(String... args) {
